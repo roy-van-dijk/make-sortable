@@ -1,0 +1,35 @@
+{
+    "name": "Make Sortable - Sort Tables",
+    "description": "Attemps to make non-sortable tables sortable.",
+    "manifest_version": 2,
+    "version": "0.1",
+    "browser_action": {
+        "default_popup": "index.html"
+    },
+    "content_security_policy": "script-src 'self'; object-src 'self'",
+    "content_scripts": [
+        {
+            "all_frames": false,
+            "js": [
+                "sortable.js",
+                "main.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+        "<all_urls>",
+        "tabs",
+        "activeTab"
+    ],
+    "icons": {
+        "16": "icon16.png",
+        "19": "icon19.png",
+        "38": "icon38.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    }
+}
